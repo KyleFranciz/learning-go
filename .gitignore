@@ -1,0 +1,21 @@
+# OS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Local agent files
+.pi/
+
+# Go binaries and test output
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+coverage.out
+*.coverprofile
