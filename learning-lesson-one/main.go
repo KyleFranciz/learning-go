@@ -1,5 +1,6 @@
 package main // <- special name to help with compling the full project
 
+// imports
 import (
 	"bufio"
 	"errors"
@@ -15,14 +16,21 @@ func main() {
 	answer, err := testingAddition()
 	fmt.Println(answer, err)
 	testingText("peter parker")
-	result, err := errorHandlingNumber()
+
+	result, err := errorHandlingNumber(5) // NOTE: this function can possibly return an error
+
+	// NOTE: this is where we accout for the error that I get from the function
 	if err != nil {
-		fmt.Printf("There has beenn an error %v", j())
+		fmt.Printf("There has beenn an error %v", err)
+	} else {
+		// otherwise we print the result
+		fmt.Println(result)
 	}
 }
 
 // learning error handling
 func errorHandlingName(name string) (string, error) {
+	// declare a error variable
 	var err error
 
 	// lower the name
@@ -44,7 +52,7 @@ func errorHandlingNumber(number int) (int, error) {
 	var err error
 
 	if number != 12 {
-		err = errors.New("the number is not 12")
+		err = errors.New("the number is not the secret code")
 		return 0, err
 	}
 
