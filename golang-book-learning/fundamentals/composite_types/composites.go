@@ -3,6 +3,7 @@ package compositetypes
 
 func SliceExample() []int {
 	// returns an empty slice
+	// NOTE: slices are arrays that are mutable, they are able to be adjusted as needed
 	var example []int
 	return example
 }

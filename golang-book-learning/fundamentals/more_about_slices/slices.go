@@ -5,7 +5,8 @@ import "fmt"
 
 func SliceCreatorExample() []int {
 	// func makes a slice
-	slice := []int{}
+	slice := []int{} // returns a non-nil slice that has zero length
+	// var slices []int // NOTE: other way to declare a slice
 	return slice
 }
 
@@ -43,4 +44,15 @@ func CapacityUnderstanding() {
 	fmt.Println(x, len(x), cap(x))
 	x = append(x, 50)
 	fmt.Println(x, len(x), cap(x))
+}
+
+func SliceSclices(slice []int) []int {
+	return slice[1:] // NOTE: Appending to a subslice is bad usually because it affect the sublices because they share the same mem by default
+}
+
+func ProperSubsliceAppend() []int {
+	example := make([]int, 0, 5)
+	testSlice := append(example, 1, 2, 3, 4, 5)
+	x := testSlice[2:4:4] // if the cap gets overflowed, the capacity get increased by the second number which is 2 in this case
+	return x
 }

@@ -2,9 +2,11 @@ package main
 
 import (
 	"fmt"
-	compositetypes "fundamentals/composite_types"
-	"fundamentals/consts"
-	moreaboutslices "fundamentals/more_about_slices"
+
+	compositetypes "golang-book-learning/fundamentals/composite_types"
+	"golang-book-learning/fundamentals/consts"
+	"golang-book-learning/fundamentals/make"
+	moreaboutslices "golang-book-learning/fundamentals/more_about_slices"
 )
 
 func main() {
@@ -44,9 +46,38 @@ func main() {
 
 		moreaboutslices.CapacityUnderstanding()
 
+		dummySlice := make.MakeExample(12) // custom function helps w/ making a slice w custom sizing to show slices are
+
+		fmt.Printf("%#v", dummySlice)
+
+		fmt.Println(" ")
+
+		fmt.Println(cap(make.TestingMakeCapacity()))
+
+		newSlice := append(make.TestingMakeCapacity2(), 1, 2, 3, 4, 5) // [1,2,3] - make function made 2 slot get filed and capacity is set to 5
+		fmt.Println(cap(newSlice))
+		fmt.Println(newSlice)
+
+		exampleSlice := []int{1, 2, 3, 4, 5}
+
+		fmt.Println(moreaboutslices.SliceSclices(exampleSlice))
+
+		ProperSlice := append(moreaboutslices.ProperSubsliceAppend(), 2)
+		fmt.Println("Appending Slice Proper Way:", ProperSlice)
+		fmt.Println("Appending Slice Proper Way Cap: ", cap(ProperSlice)) // 2
+		ProperSlice2 := append(moreaboutslices.ProperSubsliceAppend(), 4, 2, 4)
+		fmt.Println("Appending Slice Proper Way (+2):", ProperSlice2)
+		fmt.Println("Appending Slice Proper Way Cap: ", cap(ProperSlice2)) // 6
+
+		// NOTE: Slice that is slice have two different memeory address, "x" doesnt affect the base subslice at all. 20 is only added to x
+		x := moreaboutslices.ProperSubsliceAppend()
+		x = append(x, 20)
+		fmt.Println("Appending 20 to tripple sliced slice: ", x)
+		fmt.Println("Base slice: ", moreaboutslices.ProperSubsliceAppend())
 	}
 }
 
+// this is a var example of multiple vars
 var (
 	// multiple variables can be made like this at one time. Doesnt have to be the same type
 	exampleBool       bool     // sets to false by default
