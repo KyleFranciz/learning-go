@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-
-	compositetypes "golang-book-learning/fundamentals/composite_types"
 	"golang-book-learning/fundamentals/consts"
 	"golang-book-learning/fundamentals/make"
-	moreaboutslices "golang-book-learning/fundamentals/more_about_slices"
+	"golang-book-learning/fundamentals/moreaboutslices"
+
+	compositetypes "golang-book-learning/fundamentals/composite_types"
 )
 
 func main() {

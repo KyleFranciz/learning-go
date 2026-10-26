@@ -51,6 +51,7 @@ func SliceSclices(slice []int) []int {
 }
 
 func ProperSubsliceAppend() []int {
+	// this is how if I wanted to add things to a slice, this is how it should be done
 	example := make([]int, 0, 5)
 	testSlice := append(example, 1, 2, 3, 4, 5)
 	x := testSlice[2:4:4] // if the cap gets overflowed, the capacity get increased by the second number which is 2 in this case
