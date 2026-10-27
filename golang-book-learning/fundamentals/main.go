@@ -21,7 +21,7 @@ func main() {
 	// x, y := 10, "money" // another way to declare variables and types are infered
 
 	const username = "KyleDev" // this is just the name of a value, constants are essentially taggin a value
-	username2 := "LyleDev"     // vars have a memory address, they can be modified and changed. Constants can't, they do not have a memory address.
+	username2 := "DevKyle"     // vars have a memory address, they can be modified and changed. Constants can't, they do not have a memory address.
 
 	if exampleBool {
 		// doesn't run since condition is false
