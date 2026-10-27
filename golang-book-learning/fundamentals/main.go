@@ -2,9 +2,13 @@ package main
 
 import (
 	"fmt"
+
 	"golang-book-learning/fundamentals/consts"
+	"golang-book-learning/fundamentals/copy"
 	"golang-book-learning/fundamentals/make"
+	mapsex "golang-book-learning/fundamentals/mapsEx"
 	"golang-book-learning/fundamentals/moreaboutslices"
+	"golang-book-learning/fundamentals/stringsandrunes"
 
 	compositetypes "golang-book-learning/fundamentals/composite_types"
 )
@@ -46,7 +50,7 @@ func main() {
 
 		moreaboutslices.CapacityUnderstanding()
 
-		dummySlice := make.MakeExample(12) // custom function helps w/ making a slice w custom sizing to show slices are
+		dummySlice := make.MakeSliceExample(12) // custom function helps w/ making a slice w custom sizing to show slices are
 
 		fmt.Printf("%#v", dummySlice)
 
@@ -74,6 +78,29 @@ func main() {
 		x = append(x, 20)
 		fmt.Println("Appending 20 to tripple sliced slice: ", x)
 		fmt.Println("Base slice: ", moreaboutslices.ProperSubsliceAppend())
+
+		fmt.Println("Copy ended up cloning (y) into (x) and this is what (x) now has:", copy.ExampleCopy())
+
+		fmt.Println("This is what was copied from (y) over to (x): ", copy.AnotherCopyExample())
+
+		fmt.Println("This function is the more modern way to copy a slice into a new one slices.Clone(slice) ")
+		fmt.Println("This is the copy that was made:", copy.ModernCopyExample())
+		fmt.Println("This is the length of the copy that was made:", len(copy.ModernCopyExample()))
+
+		fmt.Println(stringsandrunes.SlicesAndRuneExample())
+		fmt.Println("This is what a map looks like (map[string][]string): ", mapsex.MapUnderstanding())
+		fmt.Println("This is the len of a map made using the make function: ", len(mapsex.MapExampleUsingMake())) // NOTE: len only tells the amount of key value pairs when used on a map!
+
+		// maps: finding if key exists in map
+		fmt.Println("This is an example of using the ok idiom with the map to check if something exists in it")
+		v, ok := mapsex.MapOkExample("Pie")
+		fmt.Println("This is how map return values works when trying to do look ups ", v, ok) // doesn't return the value of the entered key, and returns false
+		v2, ok2 := mapsex.MapOkExample("Number")
+		fmt.Println("This is how map return values works when trying to do look ups ", v2, ok2) // returns the value of the entered key, and returns true
+
+		// example of changing vals in maps, enter names: Kyle, Karim, Cam in to see the different incrementations
+		fmt.Println("This is an example of a key's value being incremented", mapsex.IncreasingMapValueExample("Cam"))
+
 	}
 }
 
@@ -90,6 +117,10 @@ func ComplexExample(x float32, y float32) {
 	num1 := complex(x, y)
 	num2 := complex(x, y)
 	fmt.Println(num1 + num2)
+}
+
+func SmallExample() {
+	fmt.Println("This is an example, othre real function till be added hare")
 }
 
 func ConversionExample(x int, y float32) {
