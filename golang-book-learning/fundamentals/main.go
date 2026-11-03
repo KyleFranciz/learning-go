@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-
 	"golang-book-learning/fundamentals/consts"
 	"golang-book-learning/fundamentals/copy"
 	"golang-book-learning/fundamentals/make"
-	mapsex "golang-book-learning/fundamentals/mapsEx"
 	"golang-book-learning/fundamentals/moreaboutslices"
 	"golang-book-learning/fundamentals/stringsandrunes"
+
+	mapsex "golang-book-learning/fundamentals/mapsEx"
 
 	compositetypes "golang-book-learning/fundamentals/composite_types"
 )
@@ -100,6 +100,28 @@ func main() {
 
 		// example of changing vals in maps, enter names: Kyle, Karim, Cam in to see the different incrementations
 		fmt.Println("This is an example of a key's value being incremented", mapsex.IncreasingMapValueExample("Cam"))
+
+		mapsex.SetExample()
+
+		// structs
+		type book struct {
+			name   string
+			author string
+			pages  int
+			year   int
+		}
+
+		// creating the book w, the felds filled
+		BookExample := book{
+			name:   "Atomic Habits",
+			author: "Kyle",
+			pages:  210,
+			year:   2026,
+		}
+
+		bookStore := []book{} // create a db to store books
+		updatedStore := append(bookStore, BookExample)
+		fmt.Println(updatedStore)
 
 	}
 }

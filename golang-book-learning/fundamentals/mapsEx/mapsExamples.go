@@ -13,18 +13,21 @@ func MapUnderstanding() map[string][]string {
 
 func MapExampleUsingMake() map[int][]string {
 	// key: int and value: []string
+	// returns a map that's keys are ints and the values are strings
 	exampleMap := make(map[int][]string, 10)
 	return exampleMap
 }
 
 func MapOkExample(wordToCheckInMap string) (int, bool) {
+	// string key and value int
 	mapExmaple := map[string]int{
 		"Number":      32,
 		"OtherNumber": 2027,
 	}
 
+	// return value int, bool true or false
 	v, alright := mapExmaple[wordToCheckInMap] // alright can be anything, usually is "ok" in best practices
-	return v, alright
+	return v, alright                          //
 }
 
 func IncreasingMapValueExample(name string) int {
@@ -39,4 +42,12 @@ func IncreasingMapValueExample(name string) int {
 	dummy["Cam"] = 3  // value set to 3
 
 	return dummy[name]
+}
+
+func DeleteFromMap(name string, dict map[string]int) {
+	delete(dict, name) // no return type, just deletes
+}
+
+func ClearMap(m map[string]int) {
+	clear(m) // cleared the entire map
 }

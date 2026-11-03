@@ -15,6 +15,10 @@ func ModifySliceExample(slice []int, numberToAddIn int) []int {
 	return newSlice
 }
 
+func ClearSlice(s []int) {
+	clear(s) // clears out the whole slice
+}
+
 func GetLengthOfSliceExample(slice []int) int {
 	// returns the len of the slice
 	return len(slice)
