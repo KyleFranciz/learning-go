@@ -2,11 +2,13 @@ package main
 
 import (
 	"fmt"
+
 	"golang-book-learning/fundamentals/consts"
 	"golang-book-learning/fundamentals/copy"
 	"golang-book-learning/fundamentals/make"
 	"golang-book-learning/fundamentals/moreaboutslices"
 	"golang-book-learning/fundamentals/stringsandrunes"
+	structsex "golang-book-learning/fundamentals/structsEx"
 
 	mapsex "golang-book-learning/fundamentals/mapsEx"
 
@@ -103,26 +105,10 @@ func main() {
 
 		mapsex.SetExample()
 
-		// structs
-		type book struct {
-			name   string
-			author string
-			pages  int
-			year   int
-		}
+		book1 := structsex.CreateBook("Bridge to Terrabithia", "Kyle Francis", 372, 2012)
 
-		// creating the book w, the felds filled
-		BookExample := book{
-			name:   "Atomic Habits",
-			author: "Kyle",
-			pages:  210,
-			year:   2026,
-		}
-
-		bookStore := []book{} // create a db to store books
-		updatedStore := append(bookStore, BookExample)
-		fmt.Println(updatedStore)
-
+		fmt.Println(book1.GetTitle())
+		fmt.Println(book1.GetAuthor())
 	}
 }
 
