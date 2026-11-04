@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	shadowing "golang-book-learning/fundamentals/Shadowing"
 	"golang-book-learning/fundamentals/consts"
 	"golang-book-learning/fundamentals/copy"
 	"golang-book-learning/fundamentals/make"
@@ -109,6 +110,13 @@ func main() {
 
 		fmt.Println(book1.GetTitle())
 		fmt.Println(book1.GetAuthor())
+
+		fmt.Println(structsex.StructUseCaseEx()) // returns an empty person, only the int's at {0, 0} age & weight
+
+		fmt.Println(structsex.Comparison())
+
+		// prints out example of if
+		shadowing.UnderstandingShadows1()
 	}
 }
 
