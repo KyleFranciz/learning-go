@@ -6,6 +6,7 @@ import (
 	shadowing "golang-book-learning/fundamentals/Shadowing"
 	"golang-book-learning/fundamentals/consts"
 	"golang-book-learning/fundamentals/copy"
+	forloops "golang-book-learning/fundamentals/forLoops"
 	"golang-book-learning/fundamentals/make"
 	"golang-book-learning/fundamentals/moreaboutslices"
 	"golang-book-learning/fundamentals/stringsandrunes"
@@ -117,6 +118,17 @@ func main() {
 
 		// prints out example of if
 		shadowing.UnderstandingShadows1()
+
+		// for loop test to see how it works
+		// forloops.ForLoopC()
+
+		forloops.ConditionalOnlyFor()
+
+		forloops.BreakAndContinue(10)
+
+		forloops.ForRangeLoops()
+
+		forloops.ForRangeLoopWithoutIdx()
 	}
 }
 
